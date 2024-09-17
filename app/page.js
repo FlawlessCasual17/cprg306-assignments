@@ -2,7 +2,9 @@ import Link from "next/link"
 
 export default function Page() {
     return <main style={{ marginLeft: '30rem', marginTop: '10rem' }}>
-        <h1 style={{color: '#68f6c7'}}>Web Dev 2 <i>Demos</i></h1>
+        <h1 style={{ color: '#68f6c7' }}>
+            Web Dev 2 <i className="font-serif">Assignments</i>
+        </h1>
 
         <ul className="m-6">
             <li>

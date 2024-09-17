@@ -1,6 +1,6 @@
 export default function Page() {
     return (
-        <main>
+        <main className="m-6">
             <h1>Shopping List</h1>
         </main>
     );
