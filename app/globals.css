@@ -42,7 +42,7 @@ body {
 }
 
 p {
-  font-size: medium
+  font-size: .8rem
 }
 
 @layer utilities {
