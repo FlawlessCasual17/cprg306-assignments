@@ -21,8 +21,9 @@
   }
 }
 
-li:hover {
+[href]:hover {
   text-decoration: underline;
+  color: #00ffff;
 }
 
 h1 {
@@ -30,9 +31,18 @@ h1 {
   font-weight: bold
 }
 
+h2 {
+  font-size: 2.57rem;
+  font-weight: bold
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+p {
+  font-size: medium
 }
 
 @layer utilities {
