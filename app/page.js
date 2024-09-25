@@ -9,9 +9,9 @@ export default function Page() {
             Web Development 2 - <span style={{ fontStyle: 'italic' }}>Assignments</span>
         </h1>
 
-        <ul className="m-6" style={{ marginRight: '55rem'  }}>
+        <ul className="m-6" style={{ marginRight: '55rem' }}>
             <li><Link href="week-2">Week 2</Link></li>
-            {/* <li><Link href="week-3">Week 3</Link></li> */}
+            <li><Link href="week-3">Week 3</Link></li>
         </ul>
     </main>
 }

@@ -23,7 +23,15 @@
 
 [href]:hover {
   text-decoration: underline;
-  color: #06b6d4;
+  color: #06b6d4
+}
+
+.vertical-line {
+  position: absolute;
+  margin: -16% 50%;
+  height: 90%;
+  width: 1px;
+  background-color: #bbb7ff
 }
 
 h1 {
