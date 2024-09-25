@@ -20,11 +20,13 @@
 }
 
 .vertical-line {
-  position: absolute;
-  margin: -16% 50%;
-  height: 90%;
+  position: fixed;
+  left: 50vw;
+  top: 5vh; /* Adjust as needed */
+  bottom: 5vh; /* Adjust as needed */
   width: 1px;
-  background-color: #bbb7ff
+  background-color: #bbb7ff;
+  transform: translateX(-50%) /* Center the line horizontally */
 }
 
 h1 {
@@ -39,11 +41,22 @@ h2 {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--background)
 }
 
 p {
   font-size: .8rem
+}
+
+.flexbox {
+  display: flex;
+  position: relative;
+  background-color: gray;
+  justify-content: center;
+  align-content: center;
+  padding: 5vh 23vw;
+  margin-left: 20%
+  /* TODO: FIX this flexbox class later on... */
 }
 
 @layer utilities {
