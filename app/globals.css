@@ -29,6 +29,46 @@
   transform: translateX(-50%) /* Center the line horizontally */
 }
 
+
+
+.flex-container{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 29vh;
+  border: 1px solid #c3c3cc;
+  border-radius: 10px;
+  left: 16%;
+  width: 30%;
+
+  > .item {
+    text-align: left; /* Aligns the text within the item to the left */
+    /* Other styling for the item */
+    padding: 20px;
+    background-color: #373737;
+    margin: auto 1vw;
+    border: #a5c2ff solid 2px;
+    border-radius: 10px
+  }
+}
+
+.left-header {
+  position: fixed;
+  top: 9vh;
+  left: 3.4vw;
+  width: 50%;
+  padding: 10px
+}
+
+.right-header {
+  position: fixed;
+  top: 9vh;
+  right: 3.4vw;
+  width: 50%;
+  padding: 10px
+}
+
 h1 {
   font-size: 3.57rem;
   font-weight: bold
@@ -46,17 +86,6 @@ body {
 
 p {
   font-size: .8rem
-}
-
-.flexbox {
-  display: flex;
-  position: relative;
-  background-color: gray;
-  justify-content: center;
-  align-content: center;
-  padding: 5vh 23vw;
-  margin-left: 20%
-  /* TODO: FIX this flexbox class later on... */
 }
 
 @layer utilities {
