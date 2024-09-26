@@ -9,12 +9,13 @@ export default function Page() {
                     Shopping List
                 </h1>
                 <div className="text-lg flex-container">
-                    <div className="item">8 Bananas 🍌</div>
-                    <div className="item">1 Bread Loaf 🍞</div>
-                    <div className="item">2 T-Shirts 👕</div>
-                    <div className="item">11 Hammers 🔨</div>
-                    <div className="item">1 Political Poster ⚒️</div>
-                    <div className="item">Gaming Chair 💺</div>
+                    <div>8 Bananas 🍌</div>
+                    <div>1 Bread Loaf 🍞</div>
+                    <div>2 T-Shirts 👕</div>
+                    <div>11 Hammers 🔨</div>
+                    <div>1 Political Poster ⚒️</div>
+                    <div>Gaming Chair 💺</div>
+                    <div>1 Large    Bag of Frozen Blueberries 🫐</div>
                 </div>
             </div>
             <div className="vertical-line" />

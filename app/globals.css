@@ -36,13 +36,13 @@
   position: relative;
   justify-content: center;
   flex-wrap: wrap;
-  height: 29vh;
+  height: 40vh;
   border: 1px solid #c3c3cc;
   border-radius: 10px;
   left: 16%;
   width: 30%;
 
-  > .item {
+  > div {
     text-align: left; /* Aligns the text within the item to the left */
     /* Other styling for the item */
     padding: 20px;
