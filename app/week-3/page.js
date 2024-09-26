@@ -15,7 +15,7 @@ export default function Page() {
                     <div>11 Hammers 🔨</div>
                     <div>1 Political Poster ⚒️</div>
                     <div>Gaming Chair 💺</div>
-                    <div>1 Large    Bag of Frozen Blueberries 🫐</div>
+                    <div>1 Large Bag of Frozen Blueberries 🫐</div>
                 </div>
             </div>
             <div className="vertical-line" />
