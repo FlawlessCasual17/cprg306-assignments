@@ -38,17 +38,16 @@
   width: 30%;
   border: 1px solid #c3c3cc;
   border-radius: 11px;
-  left: 16%
-}
+  left: 16%;
 
-.shopping-list > div {
-  text-align: left; /* Aligns the text within the item to the left */
-  /* Other styling for the item */
-  padding: 20px;
-  background-color: #373737;
-  margin: auto 1vw;
-  border: #a5c2ff solid 2px;
-  border-radius: inherit
+  > div {
+    text-align: left;
+    padding: 20px;
+    background-color: #373737;
+    margin: auto 1vw;
+    border: #a5c2ff solid 2px;
+    border-radius: inherit
+  }
 }
 
 .form {
@@ -57,7 +56,7 @@
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  height: 30vh;
+  height: 32vh;
   width: 25vw;
   border: 1px solid #c3c3cc;
   border-radius: 11px;
@@ -68,21 +67,33 @@
   margin: 1vh 2vw
 }
 
+.form > label[for='firstName'],
+.form > label[for='lastName'] {
+  top: 22.4%;
+  position: fixed
+}
+
 .form > input {
   background-color: #373737;
   padding: 8px;
   margin: 1vh 1vw 1vh 2vw;
   height: 5vh;
-  width: 20vw;
+  width: 20.85vw;
   border: #5e5e5e solid 1px;
   border-radius: inherit
+}
+
+.form > input#firstName,
+.form > input#lastName {
+  width: 37.4% !important;
+  margin-right: 1%
 }
 
 .form > button {
   background-color: #292929;
   margin: 1vh 2vw 1vh;
   height: 5vh;
-  width: 20vw;
+  width: 20.85vw;
   border: #515151 solid 2px;
   border-radius: inherit
 }
