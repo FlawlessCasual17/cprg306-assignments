@@ -29,28 +29,67 @@
   transform: translateX(-50%) /* Center the line horizontally */
 }
 
-
-
-.flex-container{
+.shopping-list {
   display: flex;
   position: relative;
   justify-content: center;
   flex-wrap: wrap;
   height: 40vh;
-  border: 1px solid #c3c3cc;
-  border-radius: 10px;
-  left: 16%;
   width: 30%;
+  border: 1px solid #c3c3cc;
+  border-radius: 11px;
+  left: 16%
+}
 
-  > div {
-    text-align: left; /* Aligns the text within the item to the left */
-    /* Other styling for the item */
-    padding: 20px;
-    background-color: #373737;
-    margin: auto 1vw;
-    border: #a5c2ff solid 2px;
-    border-radius: 10px
-  }
+.shopping-list > div {
+  text-align: left; /* Aligns the text within the item to the left */
+  /* Other styling for the item */
+  padding: 20px;
+  background-color: #373737;
+  margin: auto 1vw;
+  border: #a5c2ff solid 2px;
+  border-radius: inherit
+}
+
+.form {
+  display: flexbox;
+  position: fixed;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 30vh;
+  width: 25vw;
+  border: 1px solid #c3c3cc;
+  border-radius: 11px;
+  inset: auto 58.6%
+}
+
+.form > label {
+  margin: 1vh 2vw
+}
+
+.form > input {
+  background-color: #373737;
+  padding: 8px;
+  margin: 1vh 1vw 1vh 2vw;
+  height: 5vh;
+  width: 20vw;
+  border: #5e5e5e solid 1px;
+  border-radius: inherit
+}
+
+.form > button {
+  background-color: #292929;
+  margin: 1vh 2vw 1vh;
+  height: 5vh;
+  width: 20vw;
+  border: #515151 solid 2px;
+  border-radius: inherit
+}
+
+.form > button:hover {
+  background-color: #16a34a;
+  border-color: #22ff73
 }
 
 .left-header {
