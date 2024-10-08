@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import StudentInfo from './student-info'
+import './styles.css'
 
 export default function Page() {
     return (

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ListItem from './listItem'
+import './styles.css'
 
 export default function Page() {
     return (
