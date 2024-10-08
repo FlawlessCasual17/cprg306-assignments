@@ -23,11 +23,14 @@ export default function Page() {
         <Link href='../'>Go back...</Link>
         <div className='absolute w-1/6 rounded p-5 box text-center justify-center'>
             <h2 className='p-2.5'>
-                {count < 20 ? count > 1 ? count : 1 : 20}
+                {/* If "count" is greater than 20 or more, the value will be 20. */}
+                {/* If the value of "count" is inclusively between 1 and 19, the value will be itself. */}
+                {/* If "count" is less than 1, the value will be 1. */}
+                {count = count < 20 ? (count > 1 ? count : 1) : 20}
             </h2>
             <div className='flex justify-between'>
                 <button className='w-1/2 border rounded bg-gray-600' onClick={decrement}>-</button>
-                <button className='w-1/2 border rounded bg-blue-600' onClick={increment}>+</button>
+                <button className='w-1/2 border rounded bg-blue-600 border-blue-800' onClick={increment}>+</button>
             </div>
         </div>
     </main>
