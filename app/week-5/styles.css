@@ -1,0 +1,45 @@
+.box {
+    display: flex;
+    background-color: #2a2a2a;
+    border-radius: 11px;
+    width: 19.9rem;
+    height: 11.5rem;
+    align-items: center;
+    flex-direction: column;
+    background-size: 12px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    place-content: center;
+    margin: 2rem auto
+}
+
+.huge {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 3rem;
+    height: 5rem
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    line-height: 1.5rem;
+    margin-top: 1rem;
+}
+
+.buttons > button {
+    position: relative;
+    bottom: 1rem;
+    margin: auto 1rem;
+    width: 8rem;
+    height: auto;
+    font-size: 3rem;
+    border-radius: 11px;
+    padding: 1rem 1rem 1.5rem;
+    transition: background-color 0.356s ease
+}
