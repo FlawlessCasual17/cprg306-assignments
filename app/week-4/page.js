@@ -28,28 +28,26 @@ export default function Page() {
 
     const getButtonClass = (baseColor, isLimit) => isLimit ? buttonClasses.red : buttonClasses[baseColor];
 
-    return (
-        <main className='m-6'>
-            <Link className='absolute' href='../'>Go back...</Link>
-            <div className='box text-center'>
-                <div className='huge p-2.5 rounded'>
-                    {count}
-                </div>
-                <div className='buttons'>
-                    <button
-                        className={getButtonClass('gray', isMin)}
-                        onClick={decrement}
-                    >
-                        -
-                    </button>
-                    <button
-                        className={getButtonClass('blue', isMax)}
-                        onClick={increment}
-                    >
-                        +
-                    </button>
-                </div>
+    return <main className='m-6'>
+        <Link className='absolute' href='../'>Go back...</Link>
+        <div className='box text-center'>
+            <div className='huge p-2.5 rounded'>
+                {count}
             </div>
-        </main>
-    )
+            <div className='buttons'>
+                <button
+                    className={getButtonClass('gray', isMin)}
+                    onClick={decrement}
+                >
+                    -
+                </button>
+                <button
+                    className={getButtonClass('blue', isMax)}
+                    onClick={increment}
+                >
+                    +
+                </button>
+            </div>
+        </div>
+    </main>
 }
