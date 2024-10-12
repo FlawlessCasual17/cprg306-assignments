@@ -3,12 +3,15 @@
     "quoteStyle": "preferSingle",
     "indentWidth": 4,
     "semiColons": "asi",
-    "spaceSurroundingProperties": false,
+    "spaceSurroundingProperties": true,
     "bracePosition": "sameLineUnlessHanging",
     "jsxSelfClosingElement.bracketPosition": "sameLine",
     "jsx.forceNewLinesSurroundingContent": true,
     "jsx.bracketPosition": "sameLine",
-    "lineWidth": 120
+    "singleBodyPosition": "sameLine",
+    "lineWidth": 120,
+    "arguments.preferSingleLine": true,
+    "preferSingleLine": true
   },
   "excludes": [
     "**/node_modules"
