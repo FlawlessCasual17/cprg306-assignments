@@ -24,19 +24,16 @@ export default function Page() {
 
         alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`)
 
-        Array.of(setName, setQuantity, setCategory).forEach(set => set(null))
+        setName(''); setQuantity(0); setCategory('produce')
     }
 
     return <main className='m-6'>
         <Link className='absolute' href='../'>Go back...</Link>
         <form className='flexbox p-2 bg-slate-900 rounding'>
             <input className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
-                onChange={{ setName }} placeholder='Name of Item' required />
+                onChange={() => setName} placeholder='Name of Item' required />
             <div className='relative justify-between'>
-                <Buttons
-                    quantity={quantity}
-                    setQuantity={setQuantity}
-                />
+                <Buttons quantity={quantity} setQuantity={setQuantity} />
                 <SelectCategory />
             </div>
         </form>
