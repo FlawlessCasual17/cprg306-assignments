@@ -5,35 +5,55 @@ import './styles.css'
 export default function Page() {
     return (
         <main className='m-6'>
-            <Link href='../'>Go back... (Shop for more items)</Link>
+            <Link href='../'>
+                Go back... (Shop for more items)
+            </Link>
             {/* Checkout Section */}
-            <div style={{ marginLeft: '10vw', marginTop: '10rem' }}>
+            <div style={{marginLeft: '10vw', marginTop: '10rem'}}>
                 <h1 className='text-center font-serif italic right-header'>
                     Checkout
                 </h1>
                 <form className='form' action='../' method='post'>
-                    <label for='firstName'>First Name</label>
+                    <label for='firstName'>
+                        First Name
+                    </label>
                     <input type='text' id='firstName' name='firstName' required />
-                    <label for='lastName'>Last Name</label>
+                    <label for='lastName'>
+                        Last Name
+                    </label>
                     <input type='text' id='lastName' name='lastName' required />
-                    <label for='email'>Email</label>
+                    <label for='email'>
+                        Email
+                    </label>
                     <input type='email' id='email' name='email' required />
-                    <label for='password'>Password</label>
+                    <label for='password'>
+                        Password
+                    </label>
                     <input type='password' id='password' name='cardNumber' required />
-                    <label for='cardNumber'>Card Number</label>
+                    <label for='cardNumber'>
+                        Card Number
+                    </label>
                     <input type='password' id='cardNumber' name='cardNumber' required />
-                    <label for='expiryDate'>Card Expiry Date</label>
+                    <label for='expiryDate'>
+                        Card Expiry Date
+                    </label>
                     <input type='date' id='expiryDate' name='expiryDate' required />
-                    <label for='cvv'>CVV</label>
+                    <label for='cvv'>
+                        CVV
+                    </label>
                     <input type='password' id='cvv' name='cvv' required />
-                    <label for='postalCode'>Postal/ZIP Code</label>
+                    <label for='postalCode'>
+                        Postal/ZIP Code
+                    </label>
                     <input type='text' id='postalCode' name='postalCode' required />
-                    <button type='submit'>Submit Payment</button>
+                    <button type='submit'>
+                        Submit Payment
+                    </button>
                 </form>
             </div>
             <div className='vertical-line' />
             {/* Shopping List */}
-            <div style={{ marginRight: '10vw', marginTop: '10rem' }}>
+            <div style={{marginRight: '10vw', marginTop: '10rem'}}>
                 <h1 className='text-center font-serif italic left-header'>
                     Shopping List
                 </h1>
