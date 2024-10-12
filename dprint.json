@@ -1,0 +1,19 @@
+{
+  "typescript": {
+    "quoteStyle": "preferSingle",
+    "indentWidth": 4,
+    "semiColons": "asi",
+    "spaceSurroundingProperties": false,
+    "bracePosition": "sameLineUnlessHanging",
+    "jsxSelfClosingElement.bracketPosition": "sameLine",
+    "jsx.forceNewLinesSurroundingContent": true,
+    "jsx.bracketPosition": "sameLine",
+    "lineWidth": 120
+  },
+  "excludes": [
+    "**/node_modules"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.93.0.wasm"
+  ]
+}
