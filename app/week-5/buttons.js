@@ -27,7 +27,9 @@ export default function Buttons({ quantity, setQuantity }) {
             {symbol}
         </button>
 
-    return <span className='button-box text-center border-2 border-slate-800 bg-slate-600' style={{ right: '7rem', bottom: '1.5rem' }}>
+    const classes = 'button-box text-center border-2 border-slate-800 bg-slate-600'
+
+    return <span className={classes} style={{ right: '7rem', bottom: '1.5rem' }}>
         <div className='huge-text p-2.5 rounded'>{quantity}</div>
         <div className='buttons'>
             {deployButton('gray', isMin, decrement, '-')}
