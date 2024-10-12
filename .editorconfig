@@ -9,8 +9,5 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[globals.css]
-indent_size = 2
-
-[.eslintrc.json]
+[*.{css,json,mjs,ts,tsx,yaml}]
 indent_size = 2
