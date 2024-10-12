@@ -1,11 +1,40 @@
-.box {
+/* For everything else */
+.rounding {
+    border-radius: 11px
+}
+
+.flexbox {
+    position: relative;
     display: flex;
-    background-color: #2a2a2a;
-    border-radius: 11px;
-    width: 19.9rem;
-    height: 11.5rem;
-    align-items: center;
     flex-direction: column;
+    margin: 2rem auto;
+    width: 29.9rem
+}
+
+/* For categories */
+.category-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 0 !important;
+
+    > select {
+        height: 4rem;
+        width: 12.8rem
+    }
+}
+
+/* For buttons */
+.button-box {
+    display: flex;
+    border-radius: 11px;
+    width: 15rem;
+    height: 4rem;
+    align-items: center;
+    flex-direction: row;
     background-size: 12px;
     position: relative;
     overflow: hidden;
@@ -14,32 +43,34 @@
     margin: 2rem auto
 }
 
-.huge {
-    position: relative;
+.huge-text {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
+    left: -2rem;
     padding: 3rem;
-    height: 5rem
+    bottom: -2.35rem
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    line-height: 1.5rem;
-    margin-top: 1rem;
+    line-height: 0;
+    margin-top: 1rem
 }
 
 .buttons > button {
     position: relative;
-    bottom: 1rem;
-    margin: auto 1rem;
-    width: 8rem;
-    height: auto;
-    font-size: 3rem;
+    bottom: 0.5rem;
+    left: 1.8rem;
+    margin: auto 0.25rem;
+    width: 5rem;
+    height: 3rem;
+    font-size: 2rem;
     border-radius: 11px;
-    padding: 1rem 1rem 1.5rem;
+    padding: 1rem 1.3rem 1.5rem;
     transition: background-color 0.356s ease
 }

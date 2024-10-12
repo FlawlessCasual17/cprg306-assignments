@@ -1,34 +1,44 @@
 "use client"
 import './styles.css'
-import NewItem from './new-item'
+import SelectCategory from './select-category'
+import Buttons from './buttons'
 import Link from 'next/link'
 import { useState } from 'react'
-
-function handleSubmit(name, quantity, category) {
-    const item = {
-        name: name,
-        quantity: quantity,
-        category: category
-    }
-
-    console.log(item)
-
-    alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`)
-}
 
 export default function Page() {
     const [name, setName] = useState('')
     const [quantity, setQuantity] = useState(1)
     const [category, setCategory] = useState('produce')
 
+    function handleSubmit(event) {
+        event.preventDefault() // Prevent the default submission behaviour.
+
+        const item = {
+            name: name,
+            quantity: quantity,
+            category: category
+        }
+
+        // Log the item
+        console.log(item)
+
+        alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`)
+
+        Array.of(setName, setQuantity, setCategory).forEach(set => set(null))
+    }
+
     return <main className='m-6'>
         <Link className='absolute' href='../'>Go back...</Link>
-        <form className='p-2 m-4 bg-slate-900 max-w-sm w-full'>
-            <div className='mb-2'>
-                <input className='class="w-full mt-1 border-2 border-gray-300 p-2 rounded-lg'
-                    placeholder='Name of Item' required />
+        <form className='flexbox p-2 bg-slate-900 rounding'>
+            <input className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
+                onChange={{ setName }} placeholder='Name of Item' required />
+            <div className='relative justify-between'>
+                <Buttons
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                />
+                <SelectCategory />
             </div>
-            <NewItem quantity={quantity} setQuantity={setQuantity} />
         </form>
     </main>
 }
