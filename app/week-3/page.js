@@ -9,7 +9,7 @@ export default function Page() {
                 Go back... (Shop for more items)
             </Link>
             {/* Checkout Section */}
-            <div style={{marginLeft: '10vw', marginTop: '10rem'}}>
+            <div style={{ marginLeft: '10vw', marginTop: '10rem' }}>
                 <h1 className='text-center font-serif italic right-header'>
                     Checkout
                 </h1>
@@ -53,7 +53,7 @@ export default function Page() {
             </div>
             <div className='vertical-line' />
             {/* Shopping List */}
-            <div style={{marginRight: '10vw', marginTop: '10rem'}}>
+            <div style={{ marginRight: '10vw', marginTop: '10rem' }}>
                 <h1 className='text-center font-serif italic left-header'>
                     Shopping List
                 </h1>
