@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 export default function Buttons({ quantity, setQuantity }) {
     const [isMin, setIsMin] = useState(true)
     const [isMax, setIsMax] = useState(false)
-    const MIN = 1, MAX = 20
+
+    const MIN = 1, MAX = 100
 
     useEffect(() => { setIsMin(quantity === MIN), setIsMax(quantity === MAX) },
         [quantity]
