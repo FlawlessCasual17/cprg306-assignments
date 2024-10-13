@@ -41,7 +41,7 @@ export default function Page() {
     }
 
     return (
-        <div className='m-6'>
+        <main className='m-6'>
             {/* dprint-ignore */}
             <Link className='absolute' href='../'>Go back...</Link>
             <form className='flexbox p-2 bg-slate-900 rounding'>
@@ -62,6 +62,6 @@ export default function Page() {
                     {submitButton()}
                 </div>
             </form>
-        </div>
+        </main>
     )
 }
