@@ -34,17 +34,16 @@ export default function Page() {
         } else alert('Please fill in all fields')
     }
 
-    function submitButton() {
-        return (
-            <button
-                type='submit'
-                className={(!isInputFilled || !isCategorySelected) ? 'disallowed rounding' : 'submit-button rounding'}
-                onClick={(event) => handleSubmit(event)}
-                disabled={!isInputFilled || !isCategorySelected}>
-                Add Item
-            </button>
-        )
-    }
+    const areFieldsFilled = !(isInputFilled || isCategorySelected)
+
+    const submitButton = () => (
+        <button type='submit'
+            className={areFieldsFilled ? 'disallowed rounding' : 'submit-button rounding'}
+            onClick={(event) => handleSubmit(event)}
+            disabled={areFieldsFilled}>
+            Add Item
+        </button>
+    )
 
     return (
         <main className='m-6'>

@@ -18,17 +18,16 @@ export default function SelectCategory({ category, setCategory, setIsCategorySel
         'Other',
     ]
 
-    function handleCategoryChange(event) {
-        setCategory(event.target.value)
-        setSelectedColor(event.target.value !== '' ? 'bg-slate-600' : 'bg-slate-700 hover:bg-slate-600')
-        setIsCategorySelected(event.target.value !== '')
+    function handleCategoryChange(e) {
+        setCategory(e.target.value)
+        setSelectedColor(e.target.value !== '' ? 'bg-slate-600' : 'bg-slate-700 hover:bg-slate-600')
+        setIsCategorySelected(e.target.value !== '')
     }
 
     return (
         <span className='category-menu rounding' style={{ left: '8.05rem', bottom: '7.5rem' }}>
-            <select
-                className={`border-2 border-slate-800 ${selectedColor} p-2 rounding`}
-                onChange={(e) => handleCategoryChange(e)}
+            <select className={`border-2 border-slate-800 ${selectedColor} p-2 rounding`}
+                onChange={(event) => handleCategoryChange(event)}
                 value={category}
                 required
                 aria-label='selectMenu'>
