@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: column;
     margin: 2rem auto;
-    width: 29.9rem
+    width: 29.9rem;
+    height: 12.75rem
 }
 
 /* For categories */
@@ -23,7 +24,8 @@
 
     > select {
         height: 4rem;
-        width: 12.8rem
+        width: 12.8rem;
+        transition: background-color 0.356s ease;
     }
 }
 
@@ -37,8 +39,6 @@
     flex-direction: row;
     background-size: 12px;
     position: relative;
-    overflow: hidden;
-    white-space: nowrap;
     place-content: center;
     margin: 2rem auto
 }
@@ -48,11 +48,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: bold;
     left: -2rem;
     padding: 3rem;
-    bottom: -2.35rem
+    bottom: -2.6rem !important
 }
 
 .buttons {
@@ -73,4 +73,37 @@
     border-radius: 11px;
     padding: 1rem 1.3rem 1.5rem;
     transition: background-color 0.356s ease
+}
+
+.submit-button {
+    width: 100%;
+    border-width: 2px;
+    border-color: #2d5a2b;
+    background-color: #45a049;
+    font-weight: 700;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.356s ease
+}
+
+.submit-button:hover {
+    background-color: #52b555
+}
+
+.disallowed {
+    width: 100%;
+    border-width: 2px;
+    border-color: #6b7280;
+    background-color: #9ca3af;
+    font-weight: 700;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.356s ease;
+    cursor: not-allowed
 }

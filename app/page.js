@@ -5,10 +5,7 @@ export default function Page() {
         <main className='text-center mt-40'>
             <h1 style={{ color: '#689cf6' }}>
                 <div style={{ fontSize: '7rem' }}>
-                    CPRG{' '}
-                    <span className='font-mono'>
-                        306
-                    </span>
+                    CPRG <span className='font-mono'>306</span>
                 </div>
                 Web Development 2 -{' '}
                 <span style={{ fontStyle: 'italic' }}>
