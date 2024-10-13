@@ -9,6 +9,7 @@ export default function Page() {
     const [name, setName] = useState('')
     const [quantity, setQuantity] = useState(1)
     const [category, setCategory] = useState('')
+    const [isInputFilled, setIsInputFilled] = useState(false)
     const [isCategorySelected, setIsCategorySelected] = useState(false)
 
     function handleSubmit(event) {
