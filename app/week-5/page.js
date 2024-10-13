@@ -28,13 +28,14 @@ export default function Page() {
             // Alert the user
             alert(`Added item: ${item.name}, quantity: ${item.quantity}, category: ${item.category}`)
 
-            // Reset the value of name, quantity, and category
-            Array.of(setName, setCategory).forEach(set => set(''))
+            // Reset the state variables
             setQuantity(1)
-        } else alert('Please fill in all fields')
+            Array.of(setName, setCategory).forEach(set => set(''))
+            Array.of(setIsInputFilled, setIsCategorySelected).forEach(set => set(false))
+        } else alert('Please fill in all fields!')
     }
 
-    const areFieldsFilled = !(isInputFilled || isCategorySelected)
+    const areFieldsFilled = !isInputFilled || !isCategorySelected
 
     const submitButton = () => (
         <button type='submit'
@@ -48,15 +49,13 @@ export default function Page() {
     return (
         <main className='m-6'>
             {/* dprint-ignore */}
-            <Link className='absolute' href='../'>Go back...</Link>
+            <Link href='../'>Go back...</Link>
             <form className='flexbox p-2 bg-slate-900 rounding'>
                 <input className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
-                    onChange={(event) => {
-                        setName(event.target.value)
-                        setIsInputFilled(event.target.value.trim() !== '')
-                    }}
+                    onChange={(event) => { setName(event.target.value), setIsInputFilled(event.target.value.trim() !== '') }}
                     placeholder='Name of Item'
-                    required />
+                    required
+                    value={name} />
                 <div className='relative justify-between'>
                     <Buttons quantity={quantity} setQuantity={setQuantity} />
                     <SelectCategory category={category} setCategory={setCategory}
