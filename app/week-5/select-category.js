@@ -30,7 +30,8 @@ export default function SelectCategory({ category, setCategory, setIsCategorySel
                 className={`border-2 border-slate-800 ${selectedColor} p-2 rounding`}
                 onChange={(e) => handleCategoryChange(e)}
                 value={category}
-                required>
+                required
+                aria-label='selectMenu'>
                 <option key={0} value='' disabled>Category</option>
                 {categories.map((category, index) =>
                     <option key={index} value={category.toLowerCase()}>{category}</option>
