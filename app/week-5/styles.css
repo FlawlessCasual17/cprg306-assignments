@@ -48,11 +48,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.1rem;
+    font-size: 1.75rem;
     font-weight: bold;
-    left: -2rem;
+    left: -2.5rem;
     padding: 3rem;
-    bottom: -2.6rem !important
+    bottom: -2.35rem !important
 }
 
 .buttons {
