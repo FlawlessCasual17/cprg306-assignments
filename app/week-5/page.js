@@ -26,7 +26,7 @@ export default function Page() {
             console.log(item)
 
             // Alert the user
-            alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`)
+            alert(`Added item: ${item.name}, quantity: ${item.quantity}, category: ${item.category}`)
 
             // Reset the value of name, quantity, and category
             Array.of(setName, setCategory).forEach(set => set(''))
