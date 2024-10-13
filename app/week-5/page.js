@@ -50,11 +50,10 @@ export default function Page() {
             {/* dprint-ignore */}
             <Link className='absolute' href='../'>Go back...</Link>
             <form className='flexbox p-2 bg-slate-900 rounding'>
-                <input
-                    className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
-                    onChange={(e) => {
-                        setName(e.target.value)
-                        setIsInputFilled(e.target.value.trim() !== '')
+                <input className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
+                    onChange={(event) => {
+                        setName(event.target.value)
+                        setIsInputFilled(event.target.value.trim() !== '')
                     }}
                     placeholder='Name of Item'
                     required />

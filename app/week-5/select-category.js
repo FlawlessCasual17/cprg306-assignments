@@ -18,10 +18,12 @@ export default function SelectCategory({ category, setCategory, setIsCategorySel
         'Other',
     ]
 
-    function handleCategoryChange(e) {
-        setCategory(e.target.value)
-        setSelectedColor(e.target.value !== '' ? 'bg-slate-600' : 'bg-slate-700 hover:bg-slate-600')
-        setIsCategorySelected(e.target.value !== '')
+    function handleCategoryChange(event) {
+        const isEmpty = event.target.value !== ''
+
+        setCategory(event.target.value)
+        setSelectedColor(isEmpty ? 'bg-slate-600' : 'bg-slate-700 hover:bg-slate-600')
+        setIsCategorySelected(isEmpty)
     }
 
     return (
