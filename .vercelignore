@@ -1,4 +1,27 @@
 # Stuff that Vercel CLI can ignore safely during deployment.
+.hg
+.git
+.gitmodules
+.cache
+.next
+.now
+.vercel
+.npmignore
+.dockerignore
+.gitignore
+*.swp
+.DS_Store
+*.wafpickle -*
+lock - wscript
+env.local
+*.env.local
+.venv
+npm - debug.log
+config.gypi
+node_modules
+__pycache__
+venv
+CVS
 .idea
 .vscode
 .github

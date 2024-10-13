@@ -14,18 +14,24 @@ export default function Page() {
 
     function handleSubmit(event) {
         event.preventDefault() // Prevent the default submission behaviour.
+
         const item = { // Create an item object
             name: name,
             quantity: quantity,
             category: category,
         }
 
-        // Log the item
-        console.log(item)
+        if (item.name && item.category) {
+            // Log the item
+            console.log(item)
 
-        alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`)
+            // Alert the user
+            alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`)
 
-        setName(''), setQuantity(1), setCategory('')
+            // Reset the value of name, quantity, and category
+            Array.of(setName, setCategory).forEach(set => set(''))
+            setQuantity(1)
+        } else alert('Please fill in all fields')
     }
 
     function submitButton() {

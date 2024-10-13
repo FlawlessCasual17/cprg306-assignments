@@ -7,9 +7,7 @@ export default function Buttons({ quantity, setQuantity }) {
 
     const MIN = 1, MAX = 100
 
-    useEffect(() => {
-        setIsMin(quantity === MIN), setIsMax(quantity === MAX)
-    }, [quantity])
+    useEffect(() => { setIsMin(quantity === MIN), setIsMax(quantity === MAX) }, [quantity])
 
     const increment = () => setQuantity(quantity < MAX ? quantity + 1 : MAX)
     const decrement = () => setQuantity(quantity > MIN ? quantity - 1 : MIN)
@@ -24,6 +22,7 @@ export default function Buttons({ quantity, setQuantity }) {
 
     const deployButton = (color, isMax, action, symbol) => (
         <button
+            type='button'
             className={getButtonClass(color, isMax)}
             onClick={action}>
             {symbol}
