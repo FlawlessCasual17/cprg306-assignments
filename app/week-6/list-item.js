@@ -5,50 +5,18 @@ import jsonItems from './items.json'
 export default function ListItem() {
     const [sortBy, setSortBy] = useState('name')
     const [items, setItems] = useState(jsonItems)
-    const [groupByCategory, setGroupByCategory] = useState(false)
 
     const sortItems = () =>
         setItems([...items].sort((a, b) =>
-            sortBy === 'name' ?
-                a.name.localeCompare(b.name) : a.category.localeCompare(b.category)
+            sortBy === 'name' ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category)
         ))
     // if (sortBy === 'name')
     //     return a.name.localeCompare(b.name)
     // else if (sortBy === 'category')
     //     return a.category.localeCompare(b.category)
 
-    function sortByName() { setSortBy('name'); sortItems(); setGroupByCategory(false) }
-    function sortByCategory() { setSortBy('category'); sortItems(); setGroupByCategory(false) }
-
-    function handleGroupByCategory() {
-        setGroupByCategory(true)
-        const groupedItems = [...items].reduce((acc, item) => {
-            if (!acc[item.category]) acc[item.category] = []
-            acc[item.category].push(item)
-
-            return acc
-        })
-        // if (!acc[item.category]) acc[item.category] = []
-        // acc[item.category].push(item)
-
-        Object.keys(groupedItems).sort().forEach(category =>
-            [...groupedItems[category]].sort((a, b) => a.name.localeCompare(b.name))
-        )
-
-        setItems(groupedItems)
-    }
-
-    function renderItems() {
-        if (groupByCategory)
-            return Object.entries(items).map(([category, categoryItems]) =>
-                <div key={category}>
-                    <h2 className='text-xl font-bold mt-4 capitalize'>{category}</h2>
-                    <ul>{[categoryItems].map(item => <Item key={item.id} {...item} />)}</ul>
-                </div>
-            )
-
-        return <ul>{[...items].map(item => <Item key={item.id} {...item} />)}</ul>
-    }
+    function sortByName() { setSortBy('name'), sortItems() }
+    function sortByCategory() { setSortBy('category'), sortItems() }
 
     return (
         <div>
@@ -59,11 +27,10 @@ export default function ListItem() {
                 <button onClick={sortByCategory} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm' >
                     Sort by Category
                 </button>
-                <button onClick={handleGroupByCategory} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm'>
-                    Group by Category
-                </button>
             </span>
-            <span className='flex justify-around'>{renderItems()}</span>
+            <div className='flex justify-between flex-wrap w-1/2'>
+                <ul>{[...items].map(item => <Item key={item.id} {...item} />)}</ul>
+            </div>
         </div>
     )
 
