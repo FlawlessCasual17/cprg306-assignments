@@ -23,10 +23,11 @@ export default function ListItem() {
     function handleGroupByCategory() {
         setGroupByCategory(true)
         const groupedItems = items.reduce((acc, item) => {
-            if (!acc[item.category]) acc[item.category] = []
-            acc[item.category].push(item)
+            (acc[item.category] = acc[item.category] || []).push(item)
             return acc
         })
+        // if (!acc[item.category]) acc[item.category] = []
+        // acc[item.category].push(item)
 
         Object.keys(groupedItems).sort().forEach(category => {
             groupedItems[category].sort((a, b) => a.name.localeCompare(b.name))
