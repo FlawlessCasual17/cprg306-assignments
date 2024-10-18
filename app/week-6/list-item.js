@@ -1,3 +1,4 @@
+import './styles.css'
 import { useState } from 'react'
 import Item from './item'
 import jsonItems from './items.json'
