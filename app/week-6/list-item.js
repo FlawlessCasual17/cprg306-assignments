@@ -1,3 +1,4 @@
+'use client'
 import './styles.css'
 import { useState } from 'react'
 import Item from './item'
@@ -5,27 +6,24 @@ import jsonItems from './items.json'
 
 export default function ListItem() {
     const [sortBy, setSortBy] = useState('name')
-    const [items, setItems] = useState(jsonItems)
+    const sortedJson = [...jsonItems].sort((a, b) => a.name.localeCompare(b.name))
+    const [items, setItems] = useState(sortedJson)
 
-    const sortItems = () =>
-        setItems([...items].sort((a, b) =>
-            sortBy === 'name' ? a.name.localeCompare(b.name) : a.category.localeCompare(b.category)
-        ))
-    // if (sortBy === 'name')
-    //     return a.name.localeCompare(b.name)
-    // else if (sortBy === 'category')
-    //     return a.category.localeCompare(b.category)
-
-    function sortByName() { setSortBy('name'), sortItems() }
-    function sortByCategory() { setSortBy('category'), sortItems() }
+    function sortItems(type) {
+        setSortBy(type)
+        if (type === 'name')
+            setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
+        else
+            setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
+    }
 
     return (
         <div>
             <span className='flex justify-around'>
-                <button onClick={sortByName} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm'>
+                <button onClick={() => sortItems('name')} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm'>
                     Sort by Name
                 </button>
-                <button onClick={sortByCategory} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm' >
+                <button onClick={() => sortItems('category')} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm' >
                     Sort by Category
                 </button>
             </span>
