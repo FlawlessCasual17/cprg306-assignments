@@ -5,6 +5,7 @@ export default function Page() {
         <main className='m-6'>
             {/* dprint-ignore */}
             <Link href='../'>Go back...</Link>
+
         </main>
     )
 }
