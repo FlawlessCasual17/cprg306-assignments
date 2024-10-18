@@ -22,16 +22,17 @@ export default function ListItem() {
 
     function handleGroupByCategory() {
         setGroupByCategory(true)
-        const groupedItems = items.reduce((acc, item) => {
-            (acc[item.category] = acc[item.category] || []).push(item)
+        const groupedItems = [...items].reduce((acc, item) => {
+            if (!acc[item.category]) acc[item.category] = []
+            acc[item.category].push(item)
             return acc
         })
         // if (!acc[item.category]) acc[item.category] = []
         // acc[item.category].push(item)
 
-        Object.keys(groupedItems).sort().forEach(category => {
-            groupedItems[category].sort((a, b) => a.name.localeCompare(b.name))
-        })
+        Object.keys(groupedItems).sort().forEach(category =>
+            [...groupedItems[category]].sort((a, b) => a.name.localeCompare(b.name))
+        )
 
         setItems(groupedItems)
     }
@@ -41,7 +42,7 @@ export default function ListItem() {
             return Object.entries(items).map(([category, categoryItems]) =>
                 <div key={category}>
                     <h2 className='text-xl font-bold mt-4 capitalize'>{category}</h2>
-                    <ul>{categoryItems.map(item => <Item key={item.id} {...item} />)}</ul>
+                    <ul>{[categoryItems].map(item => <Item key={item.id} {...item} />)}</ul>
                 </div>
             )
 
@@ -50,9 +51,17 @@ export default function ListItem() {
 
     return (
         <div>
-            <button onClick={sortByName}>Sort by Name</button>
-            <button onClick={sortByCategory}>Sort by Category</button>
-            <button onClick={handleGroupByCategory}>Group by Category</button>
+            <span className='flex justify-around'>
+                <button onClick={sortByName} className='rounding ring-2 ring-gray-300'>
+                    Sort by Name
+                </button>
+                <button onClick={sortByCategory} className='rounding ring-2 ring-gray-300' >
+                    Sort by Category
+                </button>
+                <button onClick={handleGroupByCategory} className='rounding ring-2 ring-gray-300'>
+                    Group by Category
+                </button>
+            </span>
             {renderItems()}
         </div>
     )
