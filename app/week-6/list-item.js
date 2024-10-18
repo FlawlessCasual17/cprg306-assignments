@@ -17,14 +17,15 @@ export default function ListItem() {
     // else if (sortBy === 'category')
     //     return a.category.localeCompare(b.category)
 
-    function sortByName() { setSortBy('name'); sortItems() }
-    function sortByCategory() { setSortBy('category'); sortItems() }
+    function sortByName() { setSortBy('name'); sortItems(); setGroupByCategory(false) }
+    function sortByCategory() { setSortBy('category'); sortItems(); setGroupByCategory(false) }
 
     function handleGroupByCategory() {
         setGroupByCategory(true)
         const groupedItems = [...items].reduce((acc, item) => {
             if (!acc[item.category]) acc[item.category] = []
             acc[item.category].push(item)
+
             return acc
         })
         // if (!acc[item.category]) acc[item.category] = []
@@ -46,23 +47,23 @@ export default function ListItem() {
                 </div>
             )
 
-        return <ul>{items.map(item => <Item key={item.id} {...item} />)}</ul>
+        return <ul>{[...items].map(item => <Item key={item.id} {...item} />)}</ul>
     }
 
     return (
         <div>
             <span className='flex justify-around'>
-                <button onClick={sortByName} className='rounding ring-2 ring-gray-300'>
+                <button onClick={sortByName} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm'>
                     Sort by Name
                 </button>
-                <button onClick={sortByCategory} className='rounding ring-2 ring-gray-300' >
+                <button onClick={sortByCategory} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm' >
                     Sort by Category
                 </button>
-                <button onClick={handleGroupByCategory} className='rounding ring-2 ring-gray-300'>
+                <button onClick={handleGroupByCategory} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm'>
                     Group by Category
                 </button>
             </span>
-            {renderItems()}
+            <span className='flex justify-around'>{renderItems()}</span>
         </div>
     )
 
