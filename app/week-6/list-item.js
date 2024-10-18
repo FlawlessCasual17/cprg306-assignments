@@ -33,6 +33,4 @@ export default function ListItem() {
             </div>
         </div>
     )
-
-
 }
