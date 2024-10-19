@@ -9,22 +9,37 @@ export default function ListItem() {
     const sortedJson = [...jsonItems].sort((a, b) => a.name.localeCompare(b.name))
     const [items, setItems] = useState(sortedJson)
 
-    function sortItems(type) {
-        setSortBy(type)
-        if (type === 'name')
-            setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
-        else
-            setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
+    function sortByName() {
+        setSortBy('name')
+        setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
     }
 
+    function sortByCategory() {
+        setSortBy('category')
+        setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
+    }
+
+    function groupByCategory() {
+        sortByCategory() // Sort everything by category first.
+    }
+
+    console.log(`sortBy is now equal to: ${sortBy}`)
+
+    function getClasses(buttonType) {
+        const baseClasses = 'flex-buttons rounding ring-2 ring-slate-600 hover:ring-slate-500'
+        return sortBy === buttonType ? `${baseClasses} flex-buttons-active ring-slate-500` : baseClasses
+    }
     return (
         <span>
             <div className='flex justify-around'>
-                <button onClick={() => sortItems('name')} className='rounding ring-2 ring-gray-300 p-4 mb-2'>
+                <button onClick={sortByName} className={getClasses('name')}>
                     Sort by Name
                 </button>
-                <button onClick={() => sortItems('category')} className='rounding ring-2 ring-gray-300 p-4 mb-2' >
+                <button onClick={sortByCategory} className={getClasses('category')}>
                     Sort by Category
+                </button>
+                <button onClick={groupByCategory} className={getClasses('group')}>
+                    Group by Category
                 </button>
             </div>
             <div className=''>
