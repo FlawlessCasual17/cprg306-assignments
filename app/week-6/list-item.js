@@ -29,6 +29,7 @@ export default function ListItem() {
         const baseClasses = 'flex-buttons rounding ring-2 ring-slate-600 hover:ring-slate-500'
         return sortBy === buttonType ? `${baseClasses} flex-buttons-active ring-slate-500` : baseClasses
     }
+
     return (
         <span>
             <div className='flex justify-around'>
@@ -38,7 +39,7 @@ export default function ListItem() {
                 <button onClick={sortByCategory} className={getClasses('category')}>
                     Sort by Category
                 </button>
-                <button onClick={groupByCategory} className={getClasses('group')}>
+                <button onClick={groupByCategory} className={getClasses('category')}>
                     Group by Category
                 </button>
             </div>
