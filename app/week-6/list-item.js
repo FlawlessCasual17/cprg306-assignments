@@ -11,7 +11,7 @@ export default function ListItem() {
 
     function sortItems(type) {
         setSortBy(type)
-        if (type === 'name')
+        if (sortBy === 'name')
             setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
         else
             setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
