@@ -39,7 +39,7 @@ export default function ListItem() {
                 <button onClick={sortByCategory} className={getClasses('category')}>
                     Sort by Category
                 </button>
-                <button onClick={groupByCategory} className={getClasses('category')}>
+                <button onClick={groupByCategory} className={getClasses()}>
                     Group by Category
                 </button>
             </div>
