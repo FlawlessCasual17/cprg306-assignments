@@ -26,8 +26,8 @@ export default function ListItem() {
     console.log(`sortBy is now equal to: ${sortBy}`)
 
     function getClasses(buttonType) {
-        const baseClasses = 'flex-buttons rounding ring-2 ring-slate-600 hover:ring-slate-500'
-        return sortBy === buttonType ? `${baseClasses} flex-buttons-active ring-slate-500` : baseClasses
+        const baseClasses = 'flex-buttons rounding'
+        return sortBy === buttonType ? `${baseClasses} flex-buttons-active` : baseClasses
     }
 
     return (
@@ -43,8 +43,8 @@ export default function ListItem() {
                     Group by Category
                 </button>
             </div>
-            <div className=''>
-                <ul className='flexbox-list ring-2 bg-slate-900 rounding'>
+            <div className='relative'>
+                <ul className='flexbox-list rounding'>
                     {[...items].map(item => <Item key={item.id} {...item} />)}
                 </ul>
             </div>
