@@ -18,18 +18,20 @@ export default function ListItem() {
     }
 
     return (
-        <div>
-            <span className='flex justify-around'>
-                <button onClick={() => sortItems('name')} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm'>
+        <span>
+            <div className='flex justify-around'>
+                <button onClick={() => sortItems('name')} className='rounding ring-2 ring-gray-300 p-4 mb-2'>
                     Sort by Name
                 </button>
-                <button onClick={() => sortItems('category')} className='rounding ring-2 ring-gray-300 p-4 mb-2 shadow-sm' >
+                <button onClick={() => sortItems('category')} className='rounding ring-2 ring-gray-300 p-4 mb-2' >
                     Sort by Category
                 </button>
-            </span>
-            <div className='flex justify-between flex-wrap w-1/2'>
-                <ul>{[...items].map(item => <Item key={item.id} {...item} />)}</ul>
             </div>
-        </div>
+            <div className=''>
+                <ul className='flexbox-list ring-2 bg-slate-900 rounding'>
+                    {[...items].map(item => <Item key={item.id} {...item} />)}
+                </ul>
+            </div>
+        </span>
     )
 }

@@ -5,8 +5,19 @@
 .flexbox {
     position: relative;
     display: flex;
-    flex-direction: column;
-    margin: 2rem auto;
-    width: 29.9rem;
-    height: 12.75rem
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.flexbox-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-shrink: 50; */
+    flex-direction: row;
+    margin: 1rem auto;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 65%;
+    height: auto
 }
