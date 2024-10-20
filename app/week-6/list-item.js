@@ -29,6 +29,30 @@ export default function ListItem() {
         setTimeout(() => setIsGrouped(false), 50);
     }
 
+    function getSortedItems() {
+        const groupedItems = items.reduce((acc, item) => {
+            if (!acc[item.category]) acc[item.category] = []
+            acc[item.category].push(item)
+            return acc
+        }, {})
+
+        return Object.keys(groupedItems).sort().flatMap(category =>
+            [{ category, grouped: !isGrouped }, ...groupedItems[category].sort((a, b) =>
+                a.name.localeCompare(b.name))])
+    }
+
+    // const categoryColors = {
+    //     dairy: 'border-cyan-300',
+    //     bakery: 'border-pink-500',
+    //     meat: 'border-red-400',
+    //     produce: 'border-emerald-400',
+    //     'canned goods': 'border-amber-400',
+    //     'dry goods': 'border-orange-400',
+    //     household: 'border-blue-500'
+    // }
+
+    // const categoryColor = categoryColors[`${category}`.toLowerCase()] || 'bg-slate-200'
+
     console.log(`sortBy is now equal to: ${sortBy}`)
 
     const getClasses = (type) =>
@@ -47,11 +71,25 @@ export default function ListItem() {
                     Group by Category
                 </button>
             </div>
-            <div className='relative'>
+            <div className='aio-flexbox'>
+                {getSortedItems().map((item, id) => {
+                    return item.grouped ? (
+                        <div key={id} className={`category ${isGrouped ? '' : 'category-active'}`}>
+                            {item.category}
+                        </div>
+                    ) : (
+                        <ul key={id} className='flexbox-list rounded-xl align-text-bottom'>
+                            <Item {...item} />
+                        </ul>
+                    )
+                })}
+                {/* <div className={`category ${isGrouped ? '' : 'category-active'} ${categoryColor}`}>
+                    {category}
+                </div>
                 <ul className='flexbox-list rounded-xl align-text-bottom'>
-                    {[...items].map(item =>
-                        <Item key={item.id} isGrouped={isGrouped} {...item} />)}
+                    {[...items].map(item => <Item key={item.id} {...item} />)}
                 </ul>
+                */}
             </div>
         </span>
     )

@@ -8,30 +8,6 @@ main > h2 {
     text-align: center
 }
 
-.flexbox-list {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 1rem auto;
-    padding: 1.5rem 1.35rem 0.05rem;
-    justify-content: space-around;
-    width: 50.5rem;
-    height: 63rem;
-    border-width: 2px;
-    @apply border-blue-900 bg-slate-900
-}
-
-.aio-flexbox {
-    height: 7.5rem !important;
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: column;
-    top: 1rem
-}
-
 .flex-buttons {
     position: relative;
     flex: 1rem auto 100;
@@ -56,31 +32,11 @@ main > h2 {
     @apply text-gray-600
 }
 
-.category {
-    position: relative;
-    font-weight: 800;
-    font-size: 1.125rem /* 18px */;
-    line-height: 1.75rem /* 28px */;
-    margin-top: -1.5rem /* -24px */;
-    border-top-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px; /* border-bottom-width: 1px; */
-    border-collapse: separate;
-    padding-left: 1rem;
-    bottom: -0.325rem;
-    height: 2.2rem;
-    border-top-left-radius: 0.75rem /* 12px */;
-    border-top-right-radius: 0.75rem /* 12px */;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateY(100%);
-    opacity: 0;
-    text-transform: capitalize
-}
-
-.category-active {
+/* .category-active {
     transform: translateY(0);
     opacity: 1
-}
+} */
+
 .button-container {
     gap: 0rem 2rem
 }
