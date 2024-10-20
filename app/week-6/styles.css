@@ -12,7 +12,7 @@
 .flexbox-list {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* flex-shrink: 50; */
     flex-direction: column;
     margin: 1rem auto;
@@ -33,4 +33,11 @@
 
 .flex-buttons-active {
     @apply bg-slate-600 border-slate-500 ring-2 ring-blue-500
+}
+
+.quantity {
+    line-height: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    @apply text-gray-600
 }

@@ -1,14 +1,20 @@
 import './styles.css'
 
-export default function Item({ id, name, quantity, category }) {
+export default function Item({ isGrouped, id, name, quantity, category }) {
+    const capitalFirst = (str) => str.split(' ').map(c =>
+        `${c.charAt(0).toUpperCase()}${c.slice(1).toLowerCase()}`).join(' ')
+
     return (
-        <li key={id} className='relative w-64 mb-5 ring-2 ring-gray-300 p-4 rounding'>
-            <div className='font-semibold text-lg'>
-                {name} <span className='font-normal text-gray-600' style={{ lineHeight: '0', fontSize: '1rem' }}>
-                    × {quantity}
-                </span>
+        <span key={id} className='relative flex justify-around flex-wrap flex-row'>
+            <div className='relative font-extrabold text-lg' hidden={isGrouped}>
+                {capitalFirst(category)}
             </div>
-            <div className='text-gray-600' style={{ fontSize: '1' }}>{category}</div>
-        </li>
+            <li className='relative w-64 mb-5 ring-2 ring-gray-300 p-4 rounding'>
+                <div className='font-semibold text-lg'>
+                    {name} <span className='quantity'>× {quantity}</span>
+                </div>
+                <div className='text-gray-600' style={{ fontSize: '1' }}>{category}</div>
+            </li>
+        </span>
     )
 }

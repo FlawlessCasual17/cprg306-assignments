@@ -8,19 +8,24 @@ export default function ListItem() {
     const [sortBy, setSortBy] = useState('name')
     const sortedJson = [...jsonItems].sort((a, b) => a.name.localeCompare(b.name))
     const [items, setItems] = useState(sortedJson)
+    const [isGrouped, setIsGrouped] = useState(true)
 
     function sortByName() {
+        setIsGrouped(true)
         setSortBy('name')
         setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
     }
 
     function sortByCategory() {
-        setSortBy('category')
+        setIsGrouped(true)
+        if (isGrouped) setSortBy('category') // Necessary for `groupByCategory()` calls
         setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
     }
 
     function groupByCategory() {
-        sortByCategory() // Sort everything by category first.
+        sortByCategory() // This needs to be first
+        setSortBy('group')
+        setIsGrouped(false)
     }
 
     console.log(`sortBy is now equal to: ${sortBy}`)
@@ -37,13 +42,13 @@ export default function ListItem() {
                 <button onClick={sortByCategory} className={getClasses('category')}>
                     Sort by Category
                 </button>
-                <button onClick={groupByCategory} className={getClasses()}>
+                <button onClick={groupByCategory} className={getClasses('group')}>
                     Group by Category
                 </button>
             </div>
             <div className='relative'>
-                <ul className='flexbox-list rounding'>
-                    {[...items].map(item => <Item key={item.id} {...item} />)}
+                <ul className='flexbox-list rounding align-text-bottom'>
+                    {[...items].map(item => <Item key={item.id} isGrouped={isGrouped} {...item} />)}
                 </ul>
             </div>
         </span>
