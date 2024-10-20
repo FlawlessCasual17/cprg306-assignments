@@ -25,13 +25,14 @@ export default function ListItem() {
     function groupByCategory() {
         sortByCategory(true)
         setSortBy('group')
-        setIsGrouped(false)  // This will trigger the animation
+        // code to be executed after 50 milliseconds
+        setTimeout(() => setIsGrouped(false), 50);
     }
 
     console.log(`sortBy is now equal to: ${sortBy}`)
 
-    const getClasses = (buttonType) =>
-        `flex-buttons rounded-xl ${sortBy === buttonType ? 'flex-buttons-active' : ''}`
+    const getClasses = (type) =>
+        `flex-buttons rounded-xl ${sortBy === type ? 'flex-buttons-active' : ''}`
 
     return (
         <span>

@@ -6,14 +6,14 @@ export default function Item({ isGrouped, id, name, quantity, category }) {
         c.charAt(0).toUpperCase() + c.slice(1).toLowerCase()).join(' ')
 
     const categoryTitle = (
-        <div className={`category ${!isGrouped ? 'category-active' : ''}`}>
+        <div className={`category ${isGrouped ?  '' : 'category-active'}`}>
             {capitalFirst(category)}
         </div>
     )
 
     return (
         <span key={id} className='aio-flexbox'>
-            {!isGrouped ? categoryTitle : ''}
+            {categoryTitle}
             <li className='relative w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
                 <div className='font-semibold text-lg'>
                     {name} <span className='quantity'>× {quantity}</span>

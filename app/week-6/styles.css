@@ -68,19 +68,20 @@ h1 {
     border-collapse: separate;
     padding-left: 1rem;
     bottom: -0.35rem;
-    transition: transform 0.3s ease, height 0.3s ease;
+    border-top-left-radius: 0.75rem /* 12px */;
+    border-top-right-radius: 0.75rem /* 12px */;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(100%);
-    height: 0;
-    @apply rounded-t-xl border-slate-600;
+    opacity: 0;
+    @apply border-slate-600
 }
 
 .category-active {
     transform: translateY(0);
-    height: 2.1rem;
+    opacity: 1
 }
 .button-container {
-    gap: 0rem 2rem;
-    /* Adjust this value to increase or decrease space between buttons */
+    gap: 0rem 2rem
 }
 
 
