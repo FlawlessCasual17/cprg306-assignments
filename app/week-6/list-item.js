@@ -31,7 +31,7 @@ export default function ListItem() {
     console.log(`sortBy is now equal to: ${sortBy}`)
 
     const getClasses = (buttonType) =>
-        `flex-buttons rounding ${sortBy === buttonType ? 'flex-buttons-active' : ''}`
+        `flex-buttons rounded-xl ${sortBy === buttonType ? 'flex-buttons-active' : ''}`
 
     return (
         <span>
@@ -47,7 +47,7 @@ export default function ListItem() {
                 </button>
             </div>
             <div className='relative'>
-                <ul className='flexbox-list rounding align-text-bottom'>
+                <ul className='flexbox-list rounded-xl align-text-bottom'>
                     {[...items].map(item => <Item key={item.id} isGrouped={isGrouped} {...item} />)}
                 </ul>
             </div>

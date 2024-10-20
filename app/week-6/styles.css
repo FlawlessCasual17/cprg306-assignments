@@ -1,30 +1,31 @@
-.rounding {
+/* .rounded-xl {
     border-radius: 11px
-}
+} */
 
-/* .flexbox {
+.aio-flexbox {
     position: relative;
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    flex-direction: row;
-} */
+    flex-direction: column
+}
 
 .flexbox-list {
     position: relative;
     display: flex;
-    /* flex-wrap: wrap; */
-    /* flex-shrink: 50; */
     flex-direction: column;
     margin: 1rem auto;
     padding: 1rem;
     justify-content: space-between;
     width: 35%;
     height: auto;
-    @apply border-2 border-blue-900 bg-slate-900
+    border-width: 2px;
+    @apply border-blue-900 bg-slate-900
 }
 
 .flex-buttons {
-    @apply bg-slate-800 border-2 border-slate-600 p-4 mb-2 transition-colors
+    border-width: 2px;
+    @apply bg-slate-800 border-slate-600 p-4 mb-2 transition-colors
 }
 
 .flex-buttons:hover {
