@@ -25,10 +25,8 @@ export default function ListItem() {
 
     console.log(`sortBy is now equal to: ${sortBy}`)
 
-    function getClasses(buttonType) {
-        const baseClasses = 'flex-buttons rounding'
-        return sortBy === buttonType ? `${baseClasses} flex-buttons-active` : baseClasses
-    }
+    const getClasses = (buttonType) =>
+        `flex-buttons rounding ${sortBy === buttonType ? 'flex-buttons-active' : ''}`
 
     return (
         <span>
