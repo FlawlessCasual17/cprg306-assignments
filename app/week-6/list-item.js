@@ -16,16 +16,16 @@ export default function ListItem() {
         setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
     }
 
-    function sortByCategory() {
+    function sortByCategory(value = false) {
         setIsGrouped(true)
-        if (isGrouped) setSortBy('category') // Necessary for `groupByCategory()` calls
+        if (value) setSortBy('category') // Necessary for `groupByCategory()` calls
         setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
     }
 
     function groupByCategory() {
-        sortByCategory() // This needs to be first
+        sortByCategory(true)
         setSortBy('group')
-        setIsGrouped(false)
+        setIsGrouped(false)  // This will trigger the animation
     }
 
     console.log(`sortBy is now equal to: ${sortBy}`)
@@ -35,7 +35,7 @@ export default function ListItem() {
 
     return (
         <span>
-            <div className='flex justify-around'>
+            <div className='flex justify-center button-container relative'>
                 <button onClick={sortByName} className={getClasses('name')}>
                     Sort by Name
                 </button>
@@ -48,7 +48,8 @@ export default function ListItem() {
             </div>
             <div className='relative'>
                 <ul className='flexbox-list rounded-xl align-text-bottom'>
-                    {[...items].map(item => <Item key={item.id} isGrouped={isGrouped} {...item} />)}
+                    {[...items].map(item =>
+                        <Item key={item.id} isGrouped={isGrouped} {...item} />)}
                 </ul>
             </div>
         </span>

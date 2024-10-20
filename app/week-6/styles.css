@@ -1,30 +1,43 @@
-/* .rounded-xl {
-    border-radius: 11px
-} */
-
-.aio-flexbox {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-direction: column
+h1 {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.57rem;
+    line-height: 3rem;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    margin-bottom: 1rem;
+    text-align: center
 }
 
 .flexbox-list {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 1rem auto;
-    padding: 1rem;
-    justify-content: space-between;
-    width: 35%;
-    height: auto;
+    padding: 1.5rem 1.35rem 0.05rem;
+    justify-content: space-around;
+    width: 40.5rem;
+    height: 60rem;
     border-width: 2px;
     @apply border-blue-900 bg-slate-900
 }
 
+.aio-flexbox {
+    height: 7.5rem !important;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    top: 1rem
+}
+
 .flex-buttons {
+    position: relative;
+    flex: 1rem auto 100;
     border-width: 2px;
+    width: 11rem;
+    transition: all 0.3s ease;
     @apply bg-slate-800 border-slate-600 p-4 mb-2 transition-colors
 }
 
@@ -37,8 +50,37 @@
 }
 
 .quantity {
-    line-height: 0 !important;
+    line-height: 2rem;
     font-size: 1rem !important;
     font-weight: 400 !important;
     @apply text-gray-600
 }
+
+.category {
+    position: relative;
+    font-weight: 800;
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+    margin-top: -1.5rem /* -24px */;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px; /* border-bottom-width: 1px; */
+    border-collapse: separate;
+    padding-left: 1rem;
+    bottom: -0.35rem;
+    transition: transform 0.3s ease, height 0.3s ease;
+    transform: translateY(100%);
+    height: 0;
+    @apply rounded-t-xl border-slate-600;
+}
+
+.category-active {
+    transform: translateY(0);
+    height: 2.1rem;
+}
+.button-container {
+    gap: 0rem 2rem;
+    /* Adjust this value to increase or decrease space between buttons */
+}
+
+
