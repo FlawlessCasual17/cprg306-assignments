@@ -3,22 +3,16 @@ import './styles.css'
 
 export default function Item({ isGrouped, id, name, quantity, category }) {
     const categoryColors = {
-        // produce: 'bg-green-200',
-        dairy: 'border-gray-400',
-        bakery: 'border-orange-200',
-        meat: 'border-red-200',
-        vegetables: 'border-emerald-200',
-        produce: 'border-pink-300',
-        'frozen foods': 'border-blue-200',
-        'canned goods': 'border-purple-400',
-        'dry goods': 'border-emerald-200',
-        beverages: 'border-cyan-200',
-        snacks: 'border-indigo-200',
-        household: 'border-yellow-200',
-        other: 'border-slate-200'
+        dairy: 'border-cyan-300',
+        bakery: 'border-pink-500',
+        meat: 'border-red-400',
+        produce: 'border-emerald-400',
+        'canned goods': 'border-amber-400',
+        'dry goods': 'border-orange-400',
+        household: 'border-blue-500'
     }
 
-    const categoryColor = categoryColors[category.toLowerCase()] || 'bg-slate-200'
+    const categoryColor = categoryColors[`${category}`.toLowerCase()] || 'bg-slate-200'
 
     const categoryTitle = (
         <div className={`category ${isGrouped ?  '' : 'category-active'} ${categoryColor}`}>
