@@ -10,14 +10,12 @@ export default function ListItem() {
     const [items, setItems] = useState(sortedJson)
 
     function sortByName() {
-        setIsGrouped(true)
         setSortBy('name')
         setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
     }
 
     function sortByCategory() {
-        setIsGrouped(true)
-        setSortBy('category') // Necessary for `groupByCategory()` calls
+        setSortBy('category')
         setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
     }
 
