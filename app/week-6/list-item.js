@@ -16,17 +16,10 @@ export default function ListItem() {
         setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
     }
 
-    function sortByCategory(value = false) {
+    function sortByCategory() {
         setIsGrouped(true)
-        if (value) setSortBy('category') // Necessary for `groupByCategory()` calls
+        setSortBy('category') // Necessary for `groupByCategory()` calls
         setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
-    }
-
-    function groupByCategory() {
-        sortByCategory(true)
-        setSortBy('group')
-        // code to be executed after 50 milliseconds
-        setTimeout(() => setIsGrouped(false), 50);
     }
 
     console.log(`sortBy is now equal to: ${sortBy}`)
@@ -42,9 +35,6 @@ export default function ListItem() {
                 </button>
                 <button onClick={sortByCategory} className={getClasses('category')}>
                     Sort by Category
-                </button>
-                <button onClick={groupByCategory} className={getClasses('group')}>
-                    Group by Category
                 </button>
             </div>
             <div className='relative'>

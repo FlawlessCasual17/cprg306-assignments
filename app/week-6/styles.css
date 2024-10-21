@@ -58,29 +58,23 @@ main > h2 {
 
 .category {
     position: relative;
-    font-weight: 800;
     font-size: 1.125rem /* 18px */;
     line-height: 1.75rem /* 28px */;
     margin-top: -1.5rem /* -24px */;
     border-top-width: 1px;
     border-left-width: 1px;
-    border-right-width: 1px; /* border-bottom-width: 1px; */
-    border-collapse: separate;
+    border-right-width: 1px;
+    /* border-collapse: collapse; */
     padding-left: 1rem;
-    bottom: -0.325rem;
+    bottom: -0.79rem;
     height: 2.2rem;
     border-top-left-radius: 0.75rem /* 12px */;
     border-top-right-radius: 0.75rem /* 12px */;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateY(100%);
-    opacity: 0;
-    text-transform: capitalize
+    transform: translateY(0);
+    text-transform: capitalize;
+    @apply text-gray-400
 }
 
-.category-active {
-    transform: translateY(0);
-    opacity: 1
-}
 .button-container {
     gap: 0rem 2rem
 }
