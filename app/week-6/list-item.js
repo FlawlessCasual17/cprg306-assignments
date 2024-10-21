@@ -8,16 +8,28 @@ export default function ListItem() {
     const [sortBy, setSortBy] = useState('name')
     const sortedJson = [...jsonItems].sort((a, b) => a.name.localeCompare(b.name))
     const [items, setItems] = useState(sortedJson)
+    const [isGrouped, setIsGrouped] = useState(true)
 
     function sortByName() {
+        setIsGrouped(true)
         setSortBy('name')
         setItems([...items].sort((a, b) => a.name.localeCompare(b.name)))
     }
 
-    function sortByCategory() {
-        setSortBy('category')
+    function sortByCategory(value = false) {
+        setIsGrouped(true)
+        if (value) setSortBy('category') // Necessary for `groupByCategory()` calls
         setItems([...items].sort((a, b) => a.category.localeCompare(b.category)))
     }
+
+    function groupByCategory() {
+        sortByCategory(true)
+        setSortBy('group')
+        // code to be executed after 50 milliseconds
+        setTimeout(() => setIsGrouped(false), 50);
+    }
+
+    console.log(`sortBy is now equal to: ${sortBy}`)
 
     const getClasses = (type) =>
         `flex-buttons rounded-xl ${sortBy === type ? 'flex-buttons-active' : ''}`
@@ -31,13 +43,15 @@ export default function ListItem() {
                 <button onClick={sortByCategory} className={getClasses('category')}>
                     Sort by Category
                 </button>
+                <button onClick={groupByCategory} className={getClasses('group')}>
+                    Group by Category
+                </button>
             </div>
-            <div className='aio-flexbox'>
-                {items.map(item => (
-                    <ul key={item.id} className='flexbox-list rounded-xl align-text-bottom'>
-                        <Item {...item} />
-                    </ul>
-                ))}
+            <div className='relative'>
+                <ul className='flexbox-list rounded-xl align-text-bottom'>
+                    {[...items].map(item =>
+                        <Item key={item.id} isGrouped={isGrouped} {...item} />)}
+                </ul>
             </div>
         </span>
     )
