@@ -70,9 +70,17 @@ main > h2 {
     height: 2.2rem;
     border-top-left-radius: 0.75rem /* 12px */;
     border-top-right-radius: 0.75rem /* 12px */;
-    transform: translateY(0);
+    transform: translateY(40%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    /* opacity: 0; */
     text-transform: capitalize;
-    @apply text-gray-400
+    @apply text-gray-400 bg-slate-950
+}
+
+.category:hover {
+    transform: translateY(0);
+    /* opacity: 1; */
 }
 
 .button-container {

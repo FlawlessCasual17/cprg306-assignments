@@ -19,7 +19,7 @@ export default function Item({ id, name, quantity, category }) {
             <div className={`category ${categoryColor}`}>
                 {category}
             </div>
-            <li className='relative w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
+            <li className='relative bg-slate-950 w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
                 <div className='font-bold text-lg'>
                     {name} <span className='quantity'>× {quantity}</span>
                 </div>
