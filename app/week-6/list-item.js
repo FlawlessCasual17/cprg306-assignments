@@ -8,7 +8,6 @@ export default function ListItem() {
     const [sortBy, setSortBy] = useState('name')
     const sortedJson = [...jsonItems].sort((a, b) => a.name.localeCompare(b.name))
     const [items, setItems] = useState(sortedJson)
-    const [isGrouped, setIsGrouped] = useState(true)
 
     function sortByName() {
         setIsGrouped(true)
@@ -38,9 +37,9 @@ export default function ListItem() {
                 </button>
             </div>
             <div className='relative'>
+                {/* {[...items].map((item, id) => (<div key={id}>{item.category}</div>))} */}
                 <ul className='flexbox-list rounded-xl align-text-bottom'>
-                    {[...items].map(item =>
-                        <Item key={item.id} isGrouped={isGrouped} {...item} />)}
+                    {[...items].map(item => (<Item key={item.id} {...item} />))}
                 </ul>
             </div>
         </span>
