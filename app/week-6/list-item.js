@@ -21,16 +21,16 @@ export default function ListItem() {
 
     console.log(`sortBy is now equal to: ${sortBy}`)
 
-    const getClasses = (type) =>
-        `flex-buttons rounded-xl ${sortBy === type ? 'flex-buttons-active' : ''}`
+    // const getClasses = (type) =>
+    //     `flex-buttons rounded-xl ${sortBy === type && 'flex-buttons-active'}`
 
     return (
         <span>
             <div className='flex justify-center button-container relative'>
-                <button onClick={sortByName} className={getClasses('name')}>
+                <button onClick={sortByName} className={`flex-buttons rounded-xl ${sortBy === 'name' && 'flex-buttons-active'}`}>
                     Sort by Name
                 </button>
-                <button onClick={sortByCategory} className={getClasses('category')}>
+                <button onClick={sortByCategory} className={`flex-buttons rounded-xl ${sortBy === 'category' && 'flex-buttons-active'}`}>
                     Sort by Category
                 </button>
             </div>
