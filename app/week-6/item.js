@@ -23,7 +23,6 @@ export default function Item({ id, name, quantity, category }) {
                 <div className='font-bold text-lg'>
                     {name} <span className='quantity'>× {quantity}</span>
                 </div>
-                {/* <div className='text-gray-600' style={{ fontSize: '1' }}>{category}</div> */}
             </li>
         </span>
     )
