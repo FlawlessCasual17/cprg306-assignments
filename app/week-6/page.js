@@ -8,7 +8,7 @@ export default function Page() {
         <main className='m-6'>
             {/* dprint-ignore */}
             <Link href='../'>Go back...</Link>
-            <h2>Shopping List</h2>
+            <h1>Shopping List</h1>
             <ListItem />
         </main>
     )
