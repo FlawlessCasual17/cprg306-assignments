@@ -1,0 +1,199 @@
+/* For everything else */
+.rounding {
+    border-radius: 11px
+}
+
+.flexbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    width: 29.9rem;
+    height: 12.75rem
+}
+
+/* For categories */
+.category-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 0 !important;
+
+    > select {
+        height: 4rem;
+        width: 12.8rem;
+        transition: background-color 0.356s ease;
+    }
+}
+
+/* For buttons */
+.button-box {
+    display: flex;
+    border-radius: 11px;
+    width: 15rem;
+    height: 4rem;
+    align-items: center;
+    flex-direction: row;
+    background-size: 12px;
+    position: relative;
+    place-content: center;
+    margin: 2rem auto
+}
+
+.huge-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    left: -2.5rem;
+    padding: 3rem;
+    bottom: -2.35rem !important
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+    margin-top: 1rem
+}
+
+.buttons > button {
+    position: relative;
+    bottom: 0.5rem;
+    left: 1.8rem;
+    margin: auto 0.25rem;
+    width: 5rem;
+    height: 3rem;
+    font-size: 2rem;
+    border-radius: 11px;
+    padding: 1rem 1.3rem 1.5rem;
+    transition: background-color 0.356s ease
+}
+
+.submit-button {
+    width: 100%;
+    border-width: 2px;
+    border-color: #2d5a2b;
+    background-color: #45a049;
+    font-weight: 700;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.356s ease
+}
+
+.submit-button:hover {
+    background-color: #52b555
+}
+
+.disallowed {
+    width: 100%;
+    border-width: 2px;
+    border-color: #6b7280;
+    background-color: #9ca3af;
+    font-weight: 700;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.356s ease;
+    cursor: not-allowed
+}
+
+
+main > h2 {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.57rem;
+    line-height: 3rem;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    margin-bottom: 1rem;
+    text-align: center
+}
+
+.flexbox-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    padding: 1.5rem 1.35rem 0.05rem;
+    justify-content: space-around;
+    width: 50.5rem;
+    height: 63rem;
+    border-width: 2px;
+    @apply border-blue-900 bg-slate-900
+}
+
+.aio-flexbox {
+    height: 7.5rem !important;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    top: 1rem
+}
+
+.flex-buttons {
+    position: relative;
+    flex: 1rem auto 100;
+    border-width: 2px;
+    width: 11rem;
+    transition: all 0.3s ease;
+    @apply bg-slate-800 border-slate-600 p-4 mb-2 transition-colors
+}
+
+.flex-buttons:hover {
+    @apply bg-slate-700 border-slate-400 ring-2 ring-blue-800
+}
+
+.flex-buttons-active {
+    @apply bg-slate-600 border-slate-500 ring-2 ring-blue-500
+}
+
+.quantity {
+    line-height: 2rem;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    @apply text-gray-600
+}
+
+.category {
+    position: relative;
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+    margin-top: -1.5rem /* -24px */;
+    border-top-width: 1.5px;
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-collapse: collapse;
+    padding-left: 1rem;
+    bottom: -0.8rem;
+    height: 2.2rem;
+    border-top-left-radius: 0.75rem /* 12px */;
+    border-top-right-radius: 0.75rem /* 12px */;
+    transform: translateY(40%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    text-transform: capitalize;
+    @apply text-gray-400 bg-slate-950
+}
+
+.category:hover {
+    transform: translateY(0)
+}
+
+.button-container {
+    gap: 0rem 2rem
+}
+
+
