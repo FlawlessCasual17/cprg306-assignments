@@ -1,4 +1,4 @@
-import './styles.css'
+'use client'
 import { useEffect, useState } from 'react'
 
 export default function Buttons({ quantity, setQuantity }) {

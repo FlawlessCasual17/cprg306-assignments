@@ -137,8 +137,6 @@ main > h2 {
     height: 7.5rem !important;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
     flex-direction: column;
     top: 1rem
 }
@@ -170,7 +168,7 @@ main > h2 {
 .category {
     position: relative;
     font-size: 1.125rem /* 18px */;
-    line-height: 1.75rem /* 28px */;
+    line-height: 1.3rem /* 28px */;
     margin-top: -1.5rem /* -24px */;
     border-top-width: 1.5px;
     border-left-width: 1.5px;
@@ -182,14 +180,14 @@ main > h2 {
     border-top-left-radius: 0.75rem /* 12px */;
     border-top-right-radius: 0.75rem /* 12px */;
     transform: translateY(40%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, all 0.3s ease;
     overflow: hidden;
     text-transform: capitalize;
     @apply text-gray-400 bg-slate-950
 }
 
 .category:hover {
-    transform: translateY(0)
+    transform: translateY(-25%)
 }
 
 .button-container {

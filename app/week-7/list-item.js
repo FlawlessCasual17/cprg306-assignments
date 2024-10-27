@@ -1,8 +1,8 @@
 'use client'
-import './styles.css'
 import { useState } from 'react'
 import Item from './item'
 import jsonItems from './items.json'
+import './styles.css'
 
 export default function ListItem() {
     const [sortBy, setSortBy] = useState('name')

@@ -1,8 +1,8 @@
 'use client'
-import './styles.css'
 import { useState } from 'react'
 import Buttons from './buttons'
 import SelectCategory from './select-category'
+import './styles.css'
 
 export default function ButtonsWithCategories() {
     const [name, setName] = useState('')
@@ -46,23 +46,20 @@ export default function ButtonsWithCategories() {
     )
 
     return (
-        <div>
-            {/* dprint-ignore */}
-            <form className='flexbox p-2 bg-slate-900 rounding'>
-                <input className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
-                    onChange={(event) => { setName(event.target.value), setIsInputFilled(event.target.value.trim() !== '') }}
-                    placeholder='Name of Item'
-                    required
-                    value={name} />
-                <div className='relative justify-between'>
-                    <Buttons quantity={quantity} setQuantity={setQuantity} />
-                    <SelectCategory category={category} setCategory={setCategory}
-                        setIsCategorySelected={setIsCategorySelected} />
-                </div>
-                <div className='flex relative' style={{ bottom: '7.5rem' }}>
-                    {submitButton()}
-                </div>
-            </form>
-        </div>
+        <form className='flexbox p-2 bg-slate-900 rounding'>
+            <input className='mb-2 w-full mt-1 border-2 border-slate-800 bg-slate-600 p-2 rounding'
+                onChange={(event) => { setName(event.target.value), setIsInputFilled(event.target.value.trim() !== '') }}
+                placeholder='Name of Item'
+                required
+                value={name} />
+            <div className='relative justify-between'>
+                <Buttons quantity={quantity} setQuantity={setQuantity} />
+                <SelectCategory category={category} setCategory={setCategory}
+                    setIsCategorySelected={setIsCategorySelected} />
+            </div>
+            <div className='flex relative' style={{ bottom: '7.5rem' }}>
+                {submitButton()}
+            </div>
+        </form>
     )
 }

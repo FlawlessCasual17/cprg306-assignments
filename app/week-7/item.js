@@ -1,4 +1,3 @@
-'use client'
 import './styles.css'
 
 export default function Item({ id, name, quantity, category }) {
@@ -16,12 +15,12 @@ export default function Item({ id, name, quantity, category }) {
 
     return (
         <span key={id} className='aio-flexbox'>
-            <div className={`category ${categoryColor}`}>
+            <span className={`category ${categoryColor}`}>
                 {category}
-            </div>
+            </span>
             <li className='relative bg-slate-950 w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
                 <div className='font-bold text-lg'>
-                    {name} <span className='quantity'>× {quantity}</span>
+                    {name} <div className='quantity'>× {quantity}</div>
                 </div>
             </li>
         </span>
