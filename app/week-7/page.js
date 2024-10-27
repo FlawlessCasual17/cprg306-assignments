@@ -11,6 +11,7 @@ export default function Page() {
             <Link href='../'>Go back...</Link>
             <h2>Shopping List</h2>
             <ButtonsWithCategories />
+            {/* TODO: Link the functionality of these components together! */}
             <ListItem />
         </main>
     )
