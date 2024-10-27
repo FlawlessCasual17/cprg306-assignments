@@ -1,4 +1,4 @@
-import './styles.css'
+import '../styles.css'
 
 export default function Item({ id, name, quantity, category }) {
     const categoryColors = {

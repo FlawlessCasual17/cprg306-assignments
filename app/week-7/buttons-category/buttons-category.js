@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Buttons from './buttons'
 import SelectCategory from './select-category'
-import './styles.css'
+import '../styles.css'
 
 export default function ButtonsWithCategories() {
     const [name, setName] = useState('')

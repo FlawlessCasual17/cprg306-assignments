@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
-import ButtonsWithCategories from './buttons-category'
-import ListItem from './list-item'
+import ButtonsWithCategories from './buttons-category/buttons-category'
+import ListItem from './list-item/list-item'
 import './styles.css'
 
 export default function Page() {

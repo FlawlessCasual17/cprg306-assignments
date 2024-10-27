@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import './styles.css'
+import '../styles.css'
 
 export default function SelectCategory({ category, setCategory, setIsCategorySelected }) {
     const [selectedColor, setSelectedColor] = useState('bg-slate-700')
