@@ -1,6 +1,5 @@
 'use client'
 import './styles.css'
-import Link from 'next/link'
 import { useState } from 'react'
 import Buttons from './buttons'
 import SelectCategory from './select-category'
