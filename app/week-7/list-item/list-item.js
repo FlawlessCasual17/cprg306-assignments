@@ -1,13 +1,16 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import '../styles.css'
 import Item from './item'
 import jsonItems from './items.json'
-import '../styles.css'
 
-export default function ListItem() {
+export default function ListItem({ initialItems }) {
     const [sortBy, setSortBy] = useState('name')
-    const sortedJson = [...jsonItems].sort((a, b) => a.name.localeCompare(b.name))
-    const [items, setItems] = useState(sortedJson)
+    const [items, setItems] = useState([...jsonItems, ...initialItems])
+
+    useEffect(() => {
+        setItems([...jsonItems, ...initialItems])
+    }, [initialItems])
 
     function sortByName() {
         setSortBy('name')

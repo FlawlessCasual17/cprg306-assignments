@@ -4,7 +4,7 @@ import Buttons from './buttons'
 import SelectCategory from './select-category'
 import '../styles.css'
 
-export default function ButtonsWithCategories() {
+export default function ButtonsWithCategories({ onSubmit }) {
     const [name, setName] = useState('')
     const [quantity, setQuantity] = useState(1)
     const [category, setCategory] = useState('')
@@ -12,22 +12,18 @@ export default function ButtonsWithCategories() {
     const [isCategorySelected, setIsCategorySelected] = useState(false)
 
     function handleSubmit(event) {
-        event.preventDefault() // Prevent the default submission behaviour.
+        event.preventDefault()
 
-        const item = { // Create an item object
+        const item = {
             name: name,
             quantity: quantity,
             category: category,
         }
 
         if (item.name && item.category) {
-            // Log the item
-            console.log(item)
+            onSubmit(item)
 
-            // Alert the user
-            alert(`Added item: ${item.name}, quantity: ${item.quantity}, category: ${item.category}`)
-
-            // Reset the state variables
+            // Reset form
             setQuantity(1)
             Array.of(setName, setCategory).forEach(set => set(''))
             Array.of(setIsInputFilled, setIsCategorySelected).forEach(set => set(false))
