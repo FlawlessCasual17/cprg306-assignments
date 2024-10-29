@@ -10,8 +10,6 @@ export default function SelectCategory({ category, setCategory, setIsCategorySel
         'Dairy',
         'Bakery',
         'Meat',
-        'Vegetables',
-        'Fruits',
         'Frozen Foods',
         'Canned Goods',
         'Dry Goods',
