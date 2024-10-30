@@ -12,7 +12,7 @@ const firebaseConfig = {
   projectId: "cprg306-assignments-e1037",
   storageBucket: "cprg306-assignments-e1037.appspot.com",
   messagingSenderId: "162619230721",
-  appId: "1:162619230721:web:4b8b5e5d111f6ba9c88e00"
+  appId: "1:162619230721:web:6d8fc34b4d927743c88e00"
 };
 
 // Initialize Firebase
