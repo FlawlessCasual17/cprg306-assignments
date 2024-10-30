@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin-js": "^2.9.0",
+    "@stylistic/eslint-plugin-js": "^2.10.0",
     "autoprefixer": "^10.4.20",
+    "firebase": "^11.0.1",
     "next": "15.0.2",
     "postcss-import": "^16.1.0",
     "react": "^18.3.1",
