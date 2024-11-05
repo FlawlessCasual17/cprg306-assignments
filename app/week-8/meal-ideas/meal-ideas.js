@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-export default function MealIdeas() {
+export default function MealIdeas({ anIngredient }) {
     const [meals, setMeals] = useState([])
 
     const fetchMealIdeas = async (ingredient) => {
@@ -12,17 +12,29 @@ export default function MealIdeas() {
             .replace(/\s+/g, ' ')         // Normalize spaces
             .trim();                      // Remove leading/trailing spaces
 
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
-        const ideas = Object.keys(response.json().meals)
-        setMeals(ideas)
+        try {
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+            const data = await response.json()
+            const ideas = data.meals || []
+            setMeals(ideas)
+        } catch (error) {
+            console.log(`Error fetching meal ideas: ${error}`)
+            setMeals([])
+        }
     }
 
-    useEffect((ingredient) => { fetchMealIdeas(ingredient) }, [])
+    useEffect(() => {
+        if (anIngredient !== null) fetchMealIdeas(anIngredient)
+    }, [anIngredient])
 
     return (
-        <div>
-            {/* TODO: Do some mapping stuff here... */}
-            {meals.map}
-        </div>
+        <ul>
+            {meals.map((meal, key) =>
+                <li key={key}>
+                    {meal.strMeal}
+                    <picture><img src={meal.strMealThumb} alt={meal.strMeal} width={'100'} /></picture>
+                </li>
+            )}
+        </ul>
     )
 }
