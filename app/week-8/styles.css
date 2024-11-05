@@ -187,7 +187,7 @@ main > h2 {
     font-size: 1rem !important;
     font-weight: 400 !important;
     left: 5rem;
-    @apply text-gray-600;
+    @apply text-gray-600
 }
 
 .li-item {
