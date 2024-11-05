@@ -40,7 +40,7 @@ export default function ListItem({ initialItems }) {
             <div className='relative'>
                 {/* {[...items].map((item, id) => (<div key={id}>{item.category}</div>))} */}
                 <ul className='flexbox-list rounded-xl align-text-bottom'>
-                    {[...items].map(item => (<Item key={item.id} {...item} />))}
+                    {[...items].map(item => <Item key={item.id} {...item} />)}
                 </ul>
             </div>
         </span>

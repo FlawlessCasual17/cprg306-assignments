@@ -15,10 +15,8 @@ export default function Item({ id, name, quantity, category }) {
 
     return (
         <span key={id} className='aio-flexbox'>
-            <span className={`category ${categoryColor}`}>
-                {category}
-            </span>
-            <li className='relative bg-slate-950 w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
+            <div className={`category ${categoryColor}`}>{category}</div>
+            <li className='li-item rounded-xl'>
                 <div className='font-bold text-lg'>
                     {name} <div className='quantity'>× {quantity}</div>
                 </div>
