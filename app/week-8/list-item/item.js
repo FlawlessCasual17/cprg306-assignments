@@ -1,6 +1,6 @@
 import '../styles.css'
 
-export default function Item({ id, name, quantity, category }) {
+export default function Item({ onItemClick, id, name, quantity, category }) {
     const categoryColors = {
         dairy: 'border-cyan-300',
         bakery: 'border-pink-500',
@@ -14,9 +14,9 @@ export default function Item({ id, name, quantity, category }) {
     const categoryColor = categoryColors[`${category}`.toLowerCase()] || 'bg-slate-200'
 
     return (
-        <span key={id} className='aio-flexbox'>
-            <div className={`category ${categoryColor}`}>{category}</div>
-            <li className='li-item rounded-xl'>
+        <span key={id} className='aio-flexbox flex-col' onClick={() => onItemClick(name)}>
+            <div className={`categories ${categoryColor}`}>{category}</div>
+            <li className='li-item rounded-xl hover:bg-zinc-500' >
                 <div className='font-bold text-lg'>
                     {name} <div className='quantity'>× {quantity}</div>
                 </div>
