@@ -1,0 +1,23 @@
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
+import ButtonsWithCategories from '../week-7/buttons-category/buttons-category'
+import ListItem from '../week-8/list-item/list-item'
+import '../week-8/styles.css'
+
+export default function Page() {
+    const [items, setItems] = useState([])
+
+    const handleAddItem = (newItem) => {
+        setItems([...items, { ...newItem, id: items.length + 1 }])
+    }
+
+    return (
+        <main className='m-6'>
+            <Link href='../'>Go back...</Link>
+            <h2>Shopping List</h2>
+            <ButtonsWithCategories onSubmit={handleAddItem} />
+            <ListItem initialItems={items} />
+        </main>
+    )
+}
