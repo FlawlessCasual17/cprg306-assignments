@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import ButtonsWithCategories from '../week-7/buttons-category/buttons-category'
-import ListItem from '../week-8/list-item/list-item'
-import '../week-8/styles.css'
+import ButtonsWithCategories from '../../week-7/buttons-category/buttons-category'
+import ListItem from '../../week-8/list-item/list-item'
+import '../../week-8/styles.css'
 
 export default function Page() {
     const [items, setItems] = useState([])
