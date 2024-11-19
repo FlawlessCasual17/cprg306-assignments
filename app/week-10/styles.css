@@ -1,0 +1,22 @@
+.signIn {
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+    border-width: 2px;
+    @apply bg-green-500 hover:bg-green-700 border-green-400 hover:border-green-600 text-white
+}
+
+.signOut {
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+    border-width: 2px;
+    @apply bg-red-500 hover:bg-red-700 border-red-400 hover:border-red-600 text-white
+}
+
+h2 {
+    font-size: 2.57rem;
+    font-weight: bold
+}

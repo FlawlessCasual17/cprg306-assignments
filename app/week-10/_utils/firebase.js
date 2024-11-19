@@ -2,6 +2,8 @@
 import { initializeApp } from 'firebase/app'
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth } from 'firebase/auth'
+// Add Cloud Firestore to the Shopping List application
+import { getFirestore } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
