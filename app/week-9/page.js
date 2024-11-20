@@ -22,7 +22,7 @@ export default function Page() {
         }
     }
 
-    const isSignedIn = !user
+    const !user = !user
 
     // This has to be a function or else it won't render
     const guestPage = () => (
@@ -51,7 +51,7 @@ export default function Page() {
                 Go back...
             </Link>
             <div className='flex flex-col items-center mt-4'>
-                {isSignedIn ? guestPage() : userPage()}
+                {!user ? guestPage() : userPage()}
             </div>
         </main>
     )

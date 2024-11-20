@@ -22,8 +22,6 @@ export default function Page() {
         }
     }
 
-    const isSignedIn = !user
-
     // This has to be a function or else it won't render
     const guestPage = () => (
         <button onClick={handleSignIn} className='signIn rounded-xl transition-colors'>
@@ -51,7 +49,7 @@ export default function Page() {
                 Go back...
             </Link>
             <div className='flex flex-col items-center mt-4'>
-                {isSignedIn ? guestPage() : userPage()}
+                {!user ? guestPage() : userPage()}
             </div>
         </main>
     )

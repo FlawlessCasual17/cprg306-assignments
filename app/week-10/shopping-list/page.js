@@ -13,18 +13,13 @@ export default function Page() {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        const isSignedIn = !user
-
-        if (isSignedIn) {
+        if (!user) {
             alert('Please sign in to access the shopping list!')
             router.push('../../week-9')
         }
     }, [user, router])
 
-    const isSignedIn = !user
-
-    if (isSignedIn) return null
-
+    if (!user) return null
 
     const handleAddItem = (newItem) => {
         setItems([...items, { ...newItem, id: items.length + 1 }])
