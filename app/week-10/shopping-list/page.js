@@ -13,10 +13,13 @@ export default function Page() {
     const router = useRouter()
     const [items, setItems] = useState([])
 
-    const loadItems = async (userId) => { setItems(getItems(userId)) }
+    const loadItems = async (userId) => {
+        const items = await getItems(userId)
+        setItems(items)
+    }
 
     // Call loadItems when the component is mounted
-    useEffect(() => { loadItems(user.uid) }, [user.uid])
+    useEffect(() => { loadItems(user?.uid) }, [user])
 
     // Handle bypassing authentication
     useEffect(() => {

@@ -15,11 +15,11 @@ export default function Item({ id, name, quantity, category }) {
     const categoryColor = categoryColors[`${category}`.toLowerCase()] || 'bg-slate-200'
 
     return (
-        <span key={id} className='aio-flexbox'>
+        <span className='aio-flexbox'>
             <div className={`category ${categoryColor}`}>
                 {category}
             </div>
-            <li className='relative bg-slate-950 w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
+            <li key={id} className='relative bg-slate-950 w-64 mb-5 ring-2 ring-gray-300 p-4 rounded-xl'>
                 <div className='font-bold text-lg'>
                     {name} <span className='quantity'>× {quantity}</span>
                 </div>
