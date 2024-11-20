@@ -15,6 +15,7 @@ function AuthContextProvider({ children }) {
 
     const firebaseSignOut = () => signOut(auth)
 
+    // Handle the Firebase Authentication state changes
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)

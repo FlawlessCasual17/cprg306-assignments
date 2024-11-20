@@ -3,11 +3,10 @@ import { useEffect, useState } from 'react'
 import MealIdeas from '../meal-ideas/meal-ideas'
 import '../styles.css'
 import Item from './item'
-import jsonItems from './items.json'
 
 export default function ListItem({ initialItems }) {
     const [sortBy, setSortBy] = useState('name')
-    const [items, setItems] = useState([...jsonItems, ...initialItems])
+    const [items, setItems] = useState([...initialItems])
     const [selectedIngredient, setSelectedIngredient] = useState('')
 
     function handleItemClick(ingredient) {
@@ -22,7 +21,8 @@ export default function ListItem({ initialItems }) {
         setSelectedIngredient(cleanIngredient)
     }
 
-    useEffect(() => { setItems([...jsonItems, ...initialItems]) }, [initialItems])
+    // Combines two arrays of items using the spread operator and updates the state.
+    useEffect(() => { setItems([...initialItems]) }, [initialItems])
 
     function sortByName() {
         setSortBy('name')
@@ -52,7 +52,8 @@ export default function ListItem({ initialItems }) {
             <div className='flex'>
                 <div className='w-1/2'>
                     <ul className='flexbox-list flex-row rounded-xl align-text-bottom'>
-                        {[...items].map(item => <Item key={item.id} onItemClick={handleItemClick} {...item} />)}
+                        {[...items].map(item =>
+                            <Item key={item.id} onItemClick={handleItemClick} {...item} />)}
                     </ul>
                 </div>
                 <ul className='flexbox-list w-1/2 rounded-xl p-4 align-text-bottom'>
