@@ -10,17 +10,19 @@ export default function ListItem({ initialItems }) {
     const [items, setItems] = useState([...jsonItems, ...initialItems])
     const [selectedIngredient, setSelectedIngredient] = useState('')
 
-    const handleItemClick = (ingredient) => {
+    function handleItemClick(ingredient) {
         // Clean the ingredient name - remove emojis, numbers, and extra spaces
-        const cleanIngredient = `${ingredient}`.replace(/[^\x00-\x7F]/g, '').replace(/[0-9]/g, '').replace(/\s+/g, ' ')
-            .replace(/,.*$/, '').trim()
+        const cleanIngredient = `${ingredient}`
+            .replace(/[^\x00-\x7F]/g, '')
+            .replace(/[0-9]/g, '')
+            .replace(/\s+/g, ' ')
+            .replace(/,.*$/, '')
+            .trim()
 
         setSelectedIngredient(cleanIngredient)
     }
 
-    useEffect(() => {
-        setItems([...jsonItems, ...initialItems])
-    }, [initialItems])
+    useEffect(() => { setItems([...jsonItems, ...initialItems]) }, [initialItems])
 
     function sortByName() {
         setSortBy('name')
@@ -34,7 +36,8 @@ export default function ListItem({ initialItems }) {
 
     // console.log(`sortBy is now equal to: ${sortBy}`)
 
-    const getClasses = (type) => `flex-buttons rounded-xl ${sortBy === type && 'flex-buttons-active'}`
+    const getClasses = (type) =>
+        `flex-buttons rounded-xl ${sortBy === type && 'flex-buttons-active'}`
 
     return (
         <div>
