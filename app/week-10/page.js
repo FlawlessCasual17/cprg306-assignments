@@ -34,7 +34,7 @@ export default function Page() {
             <h2 className='mb-4'>
                 Welcome, {user.displayName}
             </h2>
-            <Link href='/week-9/shopping-list' className='block mb-4 text-blue-500 hover:text-blue-700'>
+            <Link href='/week-10/shopping-list' className='block mb-4 text-blue-500 hover:text-blue-700'>
                 Go to Shopping List
             </Link>
             <button onClick={handleSignOut} className='signOut rounded-xl transition-colors'>

@@ -13,18 +13,18 @@ export default function Page() {
     const router = useRouter()
     const [items, setItems] = useState([])
 
-    const loadItems = async (userId) => { setItems(getItems(userId)) }
-
-    // Call loadItems when the component is mounted
-    useEffect(() => { loadItems(user.uid) }, [user.uid])
-
     // Handle bypassing authentication
     useEffect(() => {
         if (!user) {
             alert('Please sign in to access the shopping list!')
-            router.push('../../week-9')
+            router.push('../../week-10')
         }
     }, [user, router])
+
+    const loadItems = async (userId) => { setItems(getItems(userId)) }
+
+    // Call loadItems when the component is mounted
+    useEffect(() => { loadItems(user.uid) }, [user.uid])
 
     if (!user) return null
 
