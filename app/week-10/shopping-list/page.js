@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import ButtonsWithCategories from '../../week-7/buttons-category/buttons-category'
-import ListItem from '../../week-8/list-item/list-item'
+import ListItem from '../list-item/list-item'
 import '../../week-8/styles.css'
 import { useUserAuth } from '../_utils/auth-context'
 
@@ -21,9 +21,10 @@ export default function Page() {
         }
     }, [user, router])
 
-    if (!user) {
-        return null
-    }
+    const isSignedIn = !user
+
+    if (isSignedIn) return null
+
 
     const handleAddItem = (newItem) => {
         setItems([...items, { ...newItem, id: items.length + 1 }])
