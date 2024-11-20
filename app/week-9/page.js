@@ -22,8 +22,6 @@ export default function Page() {
         }
     }
 
-    const !user = !user
-
     // This has to be a function or else it won't render
     const guestPage = () => (
         <button onClick={handleSignIn} className='signIn rounded-xl transition-colors'>
